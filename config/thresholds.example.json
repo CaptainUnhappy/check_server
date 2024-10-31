@@ -1,0 +1,6 @@
+{
+  "cpu_percent": 80,
+  "memory_percent": 80,
+  "disk_percent": 80,
+  "established_connections": 1000
+}
