@@ -1,0 +1,1 @@
+report_path=$(sh /home/check/os_check_new.sh | tee /dev/tty | awk '/巡检结束,html报告已生成:/{print substr($0, index($0, ":")+1)}' | tail -n1) && sz "$report_path"

@@ -1,0 +1,174 @@
+
+<html>
+<HEAD>
+<title>系统巡检报告</title>
+<style type=text/css>
+    h2, h3, h4 {
+        margin: 5px;
+    }
+    pre {
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid gray;
+        background-color: #eeeeee;
+    }
+    #index {
+        position: fixed;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        background-color: #eeeeee;
+        padding: 10px;
+        border: 2px solid blue;
+    }
+    #index ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    #index ul li {
+        margin-bottom: 5px;
+    }
+</style>
+</HEAD>
+<body>
+
+    <div id=index>
+    <h3>目录</h3>
+    <ul>
+<li><a href=#用户安全审计>用户安全审计</a></li>
+<li><a href=#登陆失败记录>登陆失败记录</a></li>
+<li><a href=#系统信息>系统信息</a></li>
+<li><a href=#配置信息>配置信息</a></li>
+<li><a href=#系统资源巡检区>系统资源巡检区</a></li>
+<li><a href=#系统安全审计>系统安全审计</a></li>
+
+    </ul>
+    </div>
+<h2 id=用户安全审计>用户安全审计</h2><pre>
+特权用户列表：
+可以远程登陆的用户列表：root oracle 
+密码为空的用户列表：
+具有Sudo权限的用户列表：</pre>
+<h2 id=登陆失败记录>登陆失败记录</h2><pre>
+登陆失败的IP记录:
+--------------------------
+IP              Failes
+
+爆破主机root账号的可疑IP记录:
+--------------------------
+IP              Failes</pre>
+<h2 id=系统信息>系统信息</h2><pre>
+主机名：dagface.localdomain
+主机ip地址(可能有多个,以实际信息为准)：10.10.50.46 
+主机类型：Linux
+主机序列号：VMware-42
+系统版本：CentOS Linux release 7.7.1908 (Core)
+系统内核版本：3.10.0-1062.el7.x86_64
+系统语言环境：en_US.UTF-8
+系统时间：2024-10-09 19:17:27
+系统已运行时间：1478 days
+系统上次重启时间：Tue Sep 22 11:51 19:17
+系统上次关机时间：Tue Sep 22 11:50 11:51</pre>
+<h2 id=配置信息>配置信息</h2><pre>
+CPU型号：Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz
+CPU架构：x86_64
+CPU个数：4
+CPU核数: 1
+CPU频率：2199.998 MHz
+内存容量：7.64 GB
+内存空闲：0.34 GB
+内存可用：5.42 GB
+内存使用率：29.1%
+SWAP容量：7.87 GB
+SWAP可用容量：7.75 GB
+SWAP使用率：1.5%
+内存Buffer大小：0 KB
+内存Cache大小：5319792 KB</pre>
+<h2 id=系统资源巡检区>系统资源巡检区</h2><pre>
+CPU使用率：1.6%
+CPU使用率前十进程信息：
+USER       PID %CPU %MEM COMMAND
+root     10028  0.2 21.0 /home/vany/jdk1.8/bin/java -Djava.util.logging.config.file=/home/vany/e-chadang-tomcat/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Dignore.endorsed.dirs= -classpath /home/vany/e-chadang-tomcat/bin/bootstrap.jar:/home/vany/e-chadang-tomcat/bin/tomcat-juli.jar -Dcatalina.base=/home/vany/e-chadang-tomcat -Dcatalina.home=/home/vany/e-chadang-tomcat -Djava.io.tmpdir=/home/vany/e-chadang-tomcat/temp org.apache.catalina.startup.Bootstrap start
+oracle   10524  0.1  0.1 ora_vktm_wan
+root     19917  0.1  0.0 [kworker/2:2]
+root         1  0.0  0.0 /usr/lib/systemd/systemd --switched-root --system --deserialize 22
+root         2  0.0  0.0 [kthreadd]
+root         4  0.0  0.0 [kworker/0:0H]
+root         6  0.0  0.0 [ksoftirqd/0]
+root         7  0.0  0.0 [migration/0]
+root         8  0.0  0.0 [rcu_bh]
+
+内存使用率前十进程信息：
+USER       PID %CPU %MEM COMMAND
+oracle   10546  0.0 21.1 ora_smon_wan
+root     10028  0.2 21.0 /home/vany/jdk1.8/bin/java -Djava.util.logging.config.file=/home/vany/e-chadang-tomcat/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Dignore.endorsed.dirs= -classpath /home/vany/e-chadang-tomcat/bin/bootstrap.jar:/home/vany/e-chadang-tomcat/bin/tomcat-juli.jar -Dcatalina.base=/home/vany/e-chadang-tomcat -Dcatalina.home=/home/vany/e-chadang-tomcat -Djava.io.tmpdir=/home/vany/e-chadang-tomcat/temp org.apache.catalina.startup.Bootstrap start
+oracle   10637  0.0 16.1 ora_cjq0_wan
+oracle   10550  0.0 15.7 ora_mmon_wan
+oracle   10540  0.0  9.1 ora_dbw0_wan
+oracle   10532  0.0  8.0 ora_dbrm_wan
+oracle   10655  0.0  4.4 ora_q001_wan
+oracle   10548  0.0  0.9 ora_reco_wan
+oracle   10552  0.0  0.8 ora_mmnl_wan
+
+磁盘IO信息(统计两次)：
+
+
+系统磁盘列表：fd0 sda 
+
+系统磁盘分区存储使用情况：
+Filesystem              Type      Size  Used Avail Use% Mounted on
+devtmpfs                devtmpfs  3.9G     0  3.9G   0% /dev
+tmpfs                   tmpfs     3.9G  2.0G  1.9G  53% /dev/shm
+tmpfs                   tmpfs     3.9G  401M  3.5G  11% /run
+tmpfs                   tmpfs     3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/mapper/centos-root xfs        50G  2.2G   48G   5% /
+/dev/sda1               xfs      1014M  152M  863M  15% /boot
+/dev/mapper/centos-home xfs       441G   32G  410G   8% /home
+tmpfs                   tmpfs     783M     0  783M   0% /run/user/0
+
+系统磁盘分区inode使用情况：
+Filesystem              Type     Inodes IUsed IFree IUse% Mounted on
+devtmpfs                devtmpfs   975K   363  975K    1% /dev
+tmpfs                   tmpfs      978K   198  978K    1% /dev/shm
+tmpfs                   tmpfs      978K   612  978K    1% /run
+tmpfs                   tmpfs      978K    16  978K    1% /sys/fs/cgroup
+/dev/mapper/centos-root xfs         25M   61K   25M    1% /
+/dev/sda1               xfs        512K   327  512K    1% /boot
+/dev/mapper/centos-home xfs        221M   70K  221M    1% /home
+tmpfs                   tmpfs      978K     1  978K    1% /run/user/0
+
+系统当前进程数：169
+系统当前进程运行数：1
+系统当前休眠进程数：168
+系统当前停止进程数：8
+系统当前僵尸进程数：0
+
+系统当前允许最大文件句柄数量：6815744
+系统当前已使用的文件句柄数量：8032
+系统单个进程运行打开文件句柄限制：1024
+
+系统当前socket连接数：123
+系统 established socket数量: 13
+系统 sync socket数量：0</pre>
+<h2 id=系统安全审计>系统安全审计</h2><pre>
+防火墙状态: on
+Selinux状态：Disabled
+系统可登录用户数：6
+系统可登录用户：root oracle dagwork test1 dagtest testht
+用户登陆记录：
+--------------------------
+用户 root 最后1次登录信息: root             pts/0    121.192.20.251   Wed Oct  9 19:15:26 +0800 2024
+用户 oracle 最后1次登录信息: oracle                                     Wed Oct  9 00:00:01 +0800 2024
+用户 dagwork 最后1次登录信息: dagwork          pts/0                     Mon May 25 16:12:27 +0800 2020
+用户 test1 最后1次登录信息: test1                                      **Never logged in**
+用户 dagtest 最后1次登录信息: dagtest                                    **Never logged in**
+用户 testht 最后1次登录信息: testht           pts/0                     Fri Jun  5 22:31:09 +0800 2020
+
+系统当前登录用户：
+   用户:       root 终端:    tty1 登录时间: 2020-09-22   11:51 登录IP:        
+   用户:       root 终端:   pts/0 登录时间: 2024-10-09   19:15 登录IP: 121.192.20.251
+
+当前用户计划任务列表：
+0 0 * * * /home/shell/rizhi.sh
+0 0 * * * /home/shell/beifen.sh</pre>
+</BODY></html>

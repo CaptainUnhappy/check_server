@@ -1,0 +1,172 @@
+
+<html>
+<HEAD>
+<title>系统巡检报告</title>
+<style type=text/css>
+    h2, h3, h4 {
+        margin: 5px;
+    }
+    pre {
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid gray;
+        background-color: #eeeeee;
+    }
+    #index {
+        position: fixed;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        background-color: #eeeeee;
+        padding: 10px;
+        border: 2px solid blue;
+    }
+    #index ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    #index ul li {
+        margin-bottom: 5px;
+    }
+</style>
+</HEAD>
+<body>
+
+    <div id=index>
+    <h3>目录</h3>
+    <ul>
+<li><a href=#用户安全审计>用户安全审计</a></li>
+<li><a href=#登陆失败记录>登陆失败记录</a></li>
+<li><a href=#系统信息>系统信息</a></li>
+<li><a href=#配置信息>配置信息</a></li>
+<li><a href=#系统资源巡检区>系统资源巡检区</a></li>
+<li><a href=#系统安全审计>系统安全审计</a></li>
+
+    </ul>
+    </div>
+<h2 id=用户安全审计>用户安全审计</h2><pre>
+特权用户列表：
+可以远程登陆的用户列表：root user 
+密码为空的用户列表：
+具有Sudo权限的用户列表：</pre>
+<h2 id=登陆失败记录>登陆失败记录</h2><pre>
+登陆失败的IP记录:
+--------------------------
+IP              Failes
+
+爆破主机root账号的可疑IP记录:
+--------------------------
+IP              Failes</pre>
+<h2 id=系统信息>系统信息</h2><pre>
+主机名：msg-app01
+主机ip地址(可能有多个,以实际信息为准)：210.29.112.47 
+主机类型：Linux
+主机序列号：VMware-42
+系统版本：CentOS Linux release 7.9.2009 (Core)
+系统内核版本：3.10.0-1160.el7.x86_64
+系统语言环境：en_US.UTF-8
+系统时间：2024-10-18 09:43:01
+系统已运行时间：580 days
+系统上次重启时间：Fri Mar 17 23:45 09:43
+系统上次关机时间：Tue Sep 20 16:12 16:13</pre>
+<h2 id=配置信息>配置信息</h2><pre>
+CPU型号：Intel(R) Xeon(R) Gold 5218 CPU @ 2.30GHz
+CPU架构：x86_64
+CPU个数：2
+CPU核数: 4
+CPU频率：2294.609 MHz
+内存容量：15.49 GB
+内存空闲：12.33 GB
+内存可用：13.71 GB
+内存使用率：11.5%
+SWAP容量：3.87 GB
+SWAP可用容量：3.87 GB
+SWAP使用率：0.0%
+内存Buffer大小：2120 KB
+内存Cache大小：1446148 KB</pre>
+<h2 id=系统资源巡检区>系统资源巡检区</h2><pre>
+CPU使用率：0.0%
+CPU使用率前十进程信息：
+USER        PID %CPU %MEM COMMAND
+root          1  0.0  0.0 /usr/lib/systemd/systemd --switched-root --system --deserialize 22
+root          2  0.0  0.0 [kthreadd]
+root          4  0.0  0.0 [kworker/0:0H]
+root          6  0.0  0.0 [ksoftirqd/0]
+root          7  0.0  0.0 [migration/0]
+root          8  0.0  0.0 [rcu_bh]
+root          9  0.0  0.0 [rcu_sched]
+root         10  0.0  0.0 [lru-add-drain]
+root         11  0.0  0.0 [watchdog/0]
+
+内存使用率前十进程信息：
+USER        PID %CPU %MEM COMMAND
+root     108719  0.0  5.5 /home/vany/app/jdk1.8/jre/bin/java -Djava.util.logging.config.file=/home/vany/app/messageproducer/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Dignore.endorsed.dirs= -classpath /home/vany/app/messageproducer/bin/bootstrap.jar:/home/vany/app/messageproducer/bin/tomcat-juli.jar -Dcatalina.base=/home/vany/app/messageproducer -Dcatalina.home=/home/vany/app/messageproducer -Djava.io.tmpdir=/home/vany/app/messageproducer/temp org.apache.catalina.startup.Bootstrap start
+root        940  0.0  0.2 /usr/bin/python2 -Es /usr/sbin/firewalld --nofork --nopid
+root       1423  0.0  0.1 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+polkitd     865  0.0  0.0 /usr/lib/polkit-1/polkitd --no-debug
+root       1073  0.0  0.0 /usr/sbin/NetworkManager --no-daemon
+root       1427  0.0  0.0 /usr/sbin/rsyslogd -n
+root       1126  0.0  0.0 /usr/lib/vmware-vgauth/VGAuthService -s
+root        634  0.0  0.0 /usr/lib/systemd/systemd-journald
+root        850  0.0  0.0 /usr/sbin/abrtd -d -s
+
+磁盘IO信息(统计两次)：
+Total DISK READ :       0.00 B/s | Total DISK WRITE :       0.00 B/s
+Actual DISK READ:       0.00 B/s | Actual DISK WRITE:       0.00 B/s
+   TID  PRIO  USER     DISK READ  DISK WRITE  SWAPIN      IO    COMMAND
+Total DISK READ :       0.00 B/s | Total DISK WRITE :       0.00 B/s
+Actual DISK READ:       0.00 B/s | Actual DISK WRITE:       0.00 B/s
+   TID  PRIO  USER     DISK READ  DISK WRITE  SWAPIN      IO    COMMAND
+
+系统磁盘列表：sda 
+
+系统磁盘分区存储使用情况：
+Filesystem              Type      Size  Used Avail Use% Mounted on
+devtmpfs                devtmpfs  7.8G     0  7.8G   0% /dev
+tmpfs                   tmpfs     7.8G     0  7.8G   0% /dev/shm
+tmpfs                   tmpfs     7.8G  620M  7.2G   8% /run
+tmpfs                   tmpfs     7.8G     0  7.8G   0% /sys/fs/cgroup
+/dev/mapper/centos-root xfs       495G  4.0G  491G   1% /
+/dev/sda1               xfs      1014M  154M  861M  16% /boot
+tmpfs                   tmpfs     1.6G     0  1.6G   0% /run/user/0
+
+系统磁盘分区inode使用情况：
+Filesystem              Type     Inodes IUsed IFree IUse% Mounted on
+devtmpfs                devtmpfs   2.0M   373  2.0M    1% /dev
+tmpfs                   tmpfs      2.0M     1  2.0M    1% /dev/shm
+tmpfs                   tmpfs      2.0M  1.3K  2.0M    1% /run
+tmpfs                   tmpfs      2.0M    16  2.0M    1% /sys/fs/cgroup
+/dev/mapper/centos-root xfs        248M   66K  248M    1% /
+/dev/sda1               xfs        512K   327  512K    1% /boot
+tmpfs                   tmpfs      2.0M     1  2.0M    1% /run/user/0
+
+系统当前进程数：218
+系统当前进程运行数：1
+系统当前休眠进程数：217
+系统当前停止进程数：8
+系统当前僵尸进程数：
+
+系统当前允许最大文件句柄数量：1553002
+系统当前已使用的文件句柄数量：1280
+系统单个进程运行打开文件句柄限制：65535
+
+系统当前socket连接数：93
+系统 established socket数量: 1
+系统 sync socket数量：0</pre>
+<h2 id=系统安全审计>系统安全审计</h2><pre>
+防火墙状态: on
+Selinux状态：Disabled
+系统可登录用户数：2
+系统可登录用户：root user
+用户登陆记录：
+--------------------------
+用户 root 最后1次登录信息: root             pts/0    210.29.117.85    Fri Oct 18 09:32:37 +0800 2024
+用户 user 最后1次登录信息: user             tty1                      Tue Jul 27 20:50:10 +0800 2021
+
+系统当前登录用户：
+   用户:       root 终端:   pts/0 登录时间: 2024-10-18   09:32 登录IP: 210.29.117.85
+
+当前用户计划任务列表：
+0 0 * * * /home/vany/sh/os/system_inspection.sh
+0 0 * * * /home/vany/sh/os/clean_log.sh</pre>
+</BODY></html>
