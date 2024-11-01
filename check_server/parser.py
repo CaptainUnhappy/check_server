@@ -67,22 +67,30 @@ def disk_usage(text):
     active = False
     values = []
     invalid = False
+    pending_device = False
     for line in lines:
         if "系统磁盘分区存储使用情况" in line:
             active = True
             continue
         if active and (line.startswith("系统") or "inode" in line.lower()):
             break
-        if not active or not line.strip() or line.startswith("Filesystem"):
+        if not active or not line.strip() or line.lstrip().startswith(("Filesystem", "文件系统")):
+            continue
+        # df may put a long /dev/mapper name on a separate line.
+        if re.fullmatch(r"/dev/\S+", line.strip()):
+            if pending_device:
+                invalid = True
+            pending_device = True
             continue
         # df -Pk and df -Th both end in a percentage and mount point.
         match = re.search(r"\s(\S+)%\s+(/.*)$", line)
         usage = number(match.group(1), percent=True) if match else None
+        pending_device = False
         if usage is None:
             invalid = True
         else:
             values.append(usage)
-    return values, invalid
+    return values, invalid or pending_device
 
 
 def check(name, value, rule, failed):
@@ -132,5 +140,6 @@ def analyze_html(path, thresholds=None):
         "host_alias": alias,
         "collected_at": field(info, "巡检时间"),
         "synthetic": field(info, "数据来源") == "synthetic",
+        "example": field(info, "数据来源") in {"synthetic", "example"},
         "checks": checks,
     }
