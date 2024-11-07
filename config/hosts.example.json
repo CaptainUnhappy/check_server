@@ -1,0 +1,18 @@
+{
+  "hosts": [
+    {
+      "alias": "demo-app-01",
+      "host": "192.0.2.10",
+      "port": 22,
+      "username": "inspector",
+      "key_filename_env": "CHECK_SERVER_KEY"
+    },
+    {
+      "alias": "demo-db-01",
+      "host": "198.51.100.20",
+      "port": 22,
+      "username": "inspector",
+      "password_env": "CHECK_SERVER_PASSWORD"
+    }
+  ]
+}
